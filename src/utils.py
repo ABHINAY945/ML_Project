@@ -56,8 +56,13 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
     
 def load_object(file_path):
     try:
+        # TEMPORARY DEBUG CODE: Print the exact path being used
+        print(f"Attempting to load object from absolute path: {os.path.abspath(file_path)}") 
+
         with open(file_path, "rb") as file_obj:
             return pickle.load(file_obj)
 
     except Exception as e:
+        # We must print the error message itself
+        print(f"Error loading object: {e}") 
         raise CustomException(e, sys)
