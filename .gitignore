@@ -135,10 +135,11 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-# .artifacts/
+artifacts/
 .env
 .envrc
 .venv
+venv_render/
 env/
 venv/
 ENV/
@@ -206,3 +207,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+
+catboost_info/
+logs/
+.vscode/
