@@ -1,9 +1,11 @@
+render.yaml:
 services:
   - type: web
     name: flask-app
     env: python
-    region: oregon  # change if needed
+    region: oregon  # change if needed
     plan: free
+    # The build commands are generally fine, but we'll add the PYTHON_VERSION
     buildCommand: |
       apt-get update && apt-get install -y build-essential gfortran python3-dev
       pip install --upgrade pip setuptools wheel
@@ -11,4 +13,6 @@ services:
     startCommand: gunicorn app:app
     envVars:
       - key: PORT
-        value: 10000  # Render overrides automatically
+        value: 10000  # Render overrides automatically
+      - key: PYTHON_VERSION  # <--- ADD THIS LINE
+        value: 3.10.13       # <--- ADD THIS LINE
