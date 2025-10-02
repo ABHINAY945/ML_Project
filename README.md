@@ -36,5 +36,5 @@ It consists of:
 
 ---
 
-## 📂 Project Structure
+
 
